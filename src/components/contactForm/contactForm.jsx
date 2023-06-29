@@ -27,19 +27,7 @@ export class ContactForm extends Component {
     if (name.trim() === '' || number.trim() === '') {
       return;
     }
-    const isDuplicate = this.props.contacts.some(
-      contact => contact.name.toLowerCase() === name.toLowerCase()
-    );
-    if (isDuplicate) {
-        Notiflix.Notify.failure(`${name} is already in contacts`);
-      return;
-    }
-    const newContact = {
-      id: nanoid(),
-      name: name,
-      number: number,
-    };
-    this.props.addContact(newContact);
+    this.props.addContact({ id: nanoid(), name, number });
     this.setState({ name: '', number: '' });
   };
 
@@ -76,11 +64,4 @@ export class ContactForm extends Component {
 
 ContactForm.propTypes = {
   addContact: PropTypes.func.isRequired,
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    })
-  ).isRequired,
 };
