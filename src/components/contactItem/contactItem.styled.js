@@ -10,8 +10,10 @@ export const ListItem = styled.li`
 
 export const DeleteButton = styled.button`
   background-color: #555;
+  margin-left: 10px;
   color: #fff;
   border: none;
+  border-radius: 10px;
   padding: 5px 10px;
   cursor: pointer;
 `;

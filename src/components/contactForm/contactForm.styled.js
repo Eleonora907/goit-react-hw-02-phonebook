@@ -15,6 +15,7 @@ export const Input = styled.input`
   width: 100%;
   padding: 8px;
   border: none;
+  border-radius: 10px;
   background-color: #333;
   color: #fff;
   margin-bottom: 10px;
@@ -24,6 +25,7 @@ export const Button = styled.button`
   background-color: #555;
   color: #fff;
   border: none;
+  border-radius: 10px;
   padding: 10px 15px;
   cursor: pointer;
 `;
